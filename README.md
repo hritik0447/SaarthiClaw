@@ -102,9 +102,11 @@ bun install
 Create a `.env` file:
 
 ```env
-OPENROUTER_API_KEY=your_key
-TELEGRAM_BOT_TOKEN=your_token
-TELEGRAM_OWNER_ID=your_telegram_user_id
+## Environment Variables
+
+OPENROUTER_API_KEY=
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_OWNER_ID=
 ```
 
 ## ▶️ Running the Project
@@ -112,7 +114,7 @@ TELEGRAM_OWNER_ID=your_telegram_user_id
 Start the application:
 
 ```bash
-bun run index.ts wakeup
+saarthiclaw-build wakeup
 ```
 
 You will be able to choose:
