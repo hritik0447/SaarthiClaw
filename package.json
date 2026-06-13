@@ -1,0 +1,31 @@
+{
+  "name": "saarthi-ai",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "saarthiclaw-build": "./index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@clack/core": "^1.4.1",
+    "@clack/prompts": "^1.5.1",
+    "@mendable/firecrawl-js": "^4.25.3",
+    "@openrouter/ai-sdk-provider": "^2.9.1",
+    "@types/marked-terminal": "^6.1.1",
+    "@types/node": "^25.9.2",
+    "ai": "^6.0.201",
+    "chalk": "^5.6.2",
+    "commander": "^15.0.0",
+    "diff": "^9.0.0",
+    "figlet": "^1.11.0",
+    "marked": "15",
+    "marked-terminal": "^7.3.0",
+    "telegraf": "^4.16.3"
+  }
+}
