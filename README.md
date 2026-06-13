@@ -1,88 +1,148 @@
 # 🚀 SaarthiClaw
 
-SaarthiClaw is an AI-powered CLI coding assistant built with TypeScript, Bun, and AI SDK. It helps developers analyze codebases, generate execution plans, answer project-related questions, and safely perform code modifications through an approval workflow.
+SaarthiClaw is an AI-powered developer assistant designed to help engineers understand, plan, and modify codebases directly from the command line.
 
-## ✨ Features
+Built with TypeScript, Bun, OpenRouter, AI SDK, and Telegram integration, SaarthiClaw combines AI reasoning with safe code execution workflows to create a practical coding assistant for real-world projects.
 
-### 🧠 Ask Mode
+Unlike traditional chatbots, SaarthiClaw can analyze project structures, generate implementation plans, answer codebase-specific questions, and perform code modifications through a human approval workflow.
 
-Ask questions about your codebase and receive contextual answers.
+---
+
+# ✨ Features
+
+## 🧠 Ask Mode
+
+Ask questions about your project and receive contextual answers.
 
 Examples:
 
-* Explain this project structure
+* Explain the architecture of this project
 * How does authentication work?
-* Summarize this codebase
+* Find potential issues in the codebase
+* Summarize this repository
 
-### 📋 Plan Mode
+---
 
-Generate step-by-step implementation plans for development goals.
+## 📋 Plan Mode
+
+Generate detailed step-by-step implementation plans before making changes.
 
 Examples:
 
-* Build a WhatsApp integration
-* Add authentication to the project
-* Refactor the approval system
+* Add WhatsApp integration
+* Build a notification system
+* Add authentication
+* Refactor the approval workflow
 
-### 🕵️ Agent Mode
+The generated plans help developers understand the work before implementation begins.
 
-Allows the AI agent to:
+---
+
+## 🕵️ Agent Mode
+
+Agent Mode allows AI to interact with the codebase using tools.
+
+Capabilities:
 
 * Read files
+* Search files
 * Analyze code
 * Create files
 * Modify files
+* Create folders
 * Execute approved actions
 
-All modifications go through an approval flow before being applied.
+All modifications are staged before being applied.
 
-### ✅ Approval Workflow
+---
 
-Before changes are applied, SaarthiClaw:
+## ✅ Approval Workflow
 
-* Stages modifications
-* Shows diffs
-* Lets the user approve or reject actions
-* Applies only approved changes
+Safety is a core feature of SaarthiClaw.
 
-### 🤖 Telegram Integration
+Before any modification is applied:
 
-Control SaarthiClaw through Telegram.
+1. Changes are staged
+2. Diffs are generated
+3. User reviews the changes
+4. User approves or rejects actions
+5. Only approved actions are executed
+
+This prevents accidental modifications.
+
+---
+
+## 🤖 Telegram Integration
+
+SaarthiClaw can be controlled through Telegram.
 
 Features:
 
-* Owner authentication
-* Command handling
-* Remote interaction with the assistant
+* Owner verification
+* Remote interaction
+* AI-powered assistance
+* Project access through Telegram commands
 
-## 🏗️ Tech Stack
+This enables developers to interact with their assistant from anywhere.
+
+---
+
+# 🏗️ Tech Stack
+
+### Core
 
 * TypeScript
-* Bun
+* Bun Runtime
 * AI SDK
 * OpenRouter
-* Telegraf
-* Zod
-* Chalk
+
+### CLI
+
 * Commander
 * Clack Prompts
+* Chalk
 
-## 📂 Project Structure
+### Validation
+
+* Zod
+
+### Telegram
+
+* Telegraf
+
+### Rendering
+
+* Marked
+* Marked Terminal
+
+---
+
+# 📂 Project Structure
 
 ```text
 ai/
+│
+├── providers/
+├── models/
+└── configuration/
+
 modes/
- ├── agent/
- ├── ask/
- ├── plan/
- └── telegram/
+│
+├── ask/
+├── plan/
+├── agent/
+└── telegram/
 
 tui/
+
 index.ts
 package.json
+tsconfig.json
 ```
 
-## ⚙️ Installation
+---
+
+# ⚙️ Installation
 
 Clone the repository:
 
@@ -97,64 +157,131 @@ Install dependencies:
 bun install
 ```
 
-## 🔐 Environment Variables
+Link the CLI locally:
 
-Create a `.env` file:
-
-```env
-## Environment Variables
-
-OPENROUTER_API_KEY=
-TELEGRAM_BOT_TOKEN=
-TELEGRAM_OWNER_ID=
+```bash
+bun link
 ```
 
-## ▶️ Running the Project
+---
 
-Start the application:
+# 🔐 Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+OPENROUTER_API_KEY=your_api_key
+
+TELEGRAM_BOT_TOKEN=your_bot_token
+
+TELEGRAM_OWNER_ID=your_telegram_user_id
+```
+
+Never commit `.env` files to GitHub.
+
+---
+
+# ▶️ Running SaarthiClaw
+
+Start the CLI:
 
 ```bash
 saarthiclaw-build wakeup
 ```
 
-You will be able to choose:
+Available Modes:
 
 * Ask Mode
 * Plan Mode
 * Agent Mode
 * Telegram Mode
 
-## 📸 Example Workflow
+---
 
-1. Launch SaarthiClaw
-2. Select Plan Mode
-3. Enter a goal
-4. Review generated steps
-5. Execute selected steps through Agent Mode
-6. Approve or reject changes
+# 🔄 Typical Workflow
 
-## 🛡️ Safety
+### 1. Generate a Plan
 
-SaarthiClaw never directly applies code modifications without approval. All changes pass through a review and approval process.
+```text
+Goal:
+Add WhatsApp integration
+```
 
-## 🎯 Future Roadmap
+SaarthiClaw generates a structured implementation plan.
+
+---
+
+### 2. Execute with Agent Mode
+
+Select the desired plan steps and allow the agent to work on them.
+
+---
+
+### 3. Review Changes
+
+Inspect generated diffs and approve or reject modifications.
+
+---
+
+### 4. Apply Changes
+
+Only approved changes are applied to the codebase.
+
+---
+
+# 🛡️ Security Philosophy
+
+SaarthiClaw follows a human-in-the-loop approach.
+
+The assistant can:
+
+* Analyze
+* Suggest
+* Prepare modifications
+
+But final control always remains with the developer.
+
+---
+
+# 🗺️ Roadmap
+
+Upcoming features:
 
 * WhatsApp Integration
 * Web Search Tools
 * Voice Mode
 * Docker Support
 * GitHub Actions Integration
-* Multi-Agent Workflows
+* Multi-Agent Collaboration
+* Persistent Memory
+* Advanced Planning Engine
 
-## 🤝 Contributing
+---
+
+# 🤝 Contributing
 
 Contributions are welcome.
 
 1. Fork the repository
 2. Create a feature branch
-3. Commit changes
-4. Open a Pull Request
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
 
-## 📄 License
+Example:
+
+```bash
+git checkout -b feature/whatsapp-mode
+git commit -m "Add WhatsApp integration"
+git push origin feature/whatsapp-mode
+```
+
+---
+
+# 📄 License
 
 MIT License
+
+---
+
+Built with ❤️ using TypeScript, Bun, and AI.
