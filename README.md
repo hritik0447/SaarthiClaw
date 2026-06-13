@@ -1,85 +1,158 @@
-# Saarthiclaw Project
+# 🚀 SaarthiClaw
 
-This repository contains the source code and resources for the Saarthiclaw application. The project is built using **[specify tech stack, e.g., Node.js, React, etc.]** and provides a platform for [brief description of functionality].
+SaarthiClaw is an AI-powered CLI coding assistant built with TypeScript, Bun, and AI SDK. It helps developers analyze codebases, generate execution plans, answer project-related questions, and safely perform code modifications through an approval workflow.
 
-## Table of Contents
+## ✨ Features
 
-- [About](#about)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Configuration](#configuration)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+### 🧠 Ask Mode
 
-## About
+Ask questions about your codebase and receive contextual answers.
 
-A short overview of what the project does, its key features, and any important background information.
+Examples:
 
-## Installation
+* Explain this project structure
+* How does authentication work?
+* Summarize this codebase
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/saarthiclaw.git
-   cd saarthiclaw
-   ```
-2. **Install dependencies**
-   ```bash
-   # Example for npm
-   npm install
-   # Or for Python
-   # pip install -r requirements.txt
-   ```
-3. **Set up environment variables**
-   Copy the example environment file and modify as needed:
-   ```bash
-   cp .env.example .env
-   ```
-   Edit `.env` with your configuration (database connection strings, API keys, etc.).
+### 📋 Plan Mode
 
-## Running the Application
+Generate step-by-step implementation plans for development goals.
 
-```bash
-# Development mode
-npm run dev
+Examples:
 
-# Production build
-npm run build
-npm start
+* Build a WhatsApp integration
+* Add authentication to the project
+* Refactor the approval system
+
+### 🕵️ Agent Mode
+
+Allows the AI agent to:
+
+* Read files
+* Analyze code
+* Create files
+* Modify files
+* Execute approved actions
+
+All modifications go through an approval flow before being applied.
+
+### ✅ Approval Workflow
+
+Before changes are applied, SaarthiClaw:
+
+* Stages modifications
+* Shows diffs
+* Lets the user approve or reject actions
+* Applies only approved changes
+
+### 🤖 Telegram Integration
+
+Control SaarthiClaw through Telegram.
+
+Features:
+
+* Owner authentication
+* Command handling
+* Remote interaction with the assistant
+
+## 🏗️ Tech Stack
+
+* TypeScript
+* Bun
+* AI SDK
+* OpenRouter
+* Telegraf
+* Zod
+* Chalk
+* Commander
+* Clack Prompts
+
+## 📂 Project Structure
+
+```text
+ai/
+modes/
+ ├── agent/
+ ├── ask/
+ ├── plan/
+ └── telegram/
+
+tui/
+index.ts
+package.json
 ```
 
-Adjust the commands according to the language/framework used.
+## ⚙️ Installation
 
-## Configuration
-
-Explain any configuration files, important settings, and how to modify them. Reference the `.env` file and any config directories.
-
-## Testing
-
-Instructions for running the test suite:
+Clone the repository:
 
 ```bash
-npm test
-# Or for pytest
-pytest
+git clone https://github.com/hritik0447/SaarthiClaw.git
+cd SaarthiClaw
 ```
 
-## Contributing
+Install dependencies:
 
-Contributions are welcome! Please follow these steps:
+```bash
+bun install
+```
 
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. Commit your changes with clear messages.
-4. Push to your fork and open a Pull Request.
+## 🔐 Environment Variables
 
-Please adhere to the project's code style and include relevant tests.
+Create a `.env` file:
 
-## License
+```env
+OPENROUTER_API_KEY=your_key
+TELEGRAM_BOT_TOKEN=your_token
+TELEGRAM_OWNER_ID=your_telegram_user_id
+```
 
-Specify the license (e.g., MIT, Apache 2.0). Include the full license text in a `LICENSE` file.
+## ▶️ Running the Project
 
----
+Start the application:
+
+```bash
+bun run index.ts wakeup
+```
+
+You will be able to choose:
+
+* Ask Mode
+* Plan Mode
+* Agent Mode
+* Telegram Mode
+
+## 📸 Example Workflow
+
+1. Launch SaarthiClaw
+2. Select Plan Mode
+3. Enter a goal
+4. Review generated steps
+5. Execute selected steps through Agent Mode
+6. Approve or reject changes
+
+## 🛡️ Safety
+
+SaarthiClaw never directly applies code modifications without approval. All changes pass through a review and approval process.
+
+## 🎯 Future Roadmap
+
+* WhatsApp Integration
+* Web Search Tools
+* Voice Mode
+* Docker Support
+* GitHub Actions Integration
+* Multi-Agent Workflows
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Open a Pull Request
+
+## 📄 License
+
+MIT License
