@@ -8,11 +8,17 @@ Unlike traditional chatbots, SaarthiClaw can analyze project structures, generat
 
 ---
 
+# 📋 Project Overview
+
+SaarthiClaw empowers developers by providing intelligent coding assistance through a multifunctional command-line interface and Telegram integration. It leverages AI to understand complex codebases, generate detailed implementation plans, and safely apply changes with human approval, ensuring productivity without sacrificing control or security.
+
+---
+
 # ✨ Features
 
 ## 🧠 Ask Mode
 
-Ask questions about your project and receive contextual answers.
+Ask questions about your project and receive contextual, insightful answers.
 
 Examples:
 
@@ -25,7 +31,7 @@ Examples:
 
 ## 📋 Plan Mode
 
-Generate detailed step-by-step implementation plans before making changes.
+Generate detailed, step-by-step implementation plans before making changes.
 
 Examples:
 
@@ -34,111 +40,45 @@ Examples:
 * Add authentication
 * Refactor the approval workflow
 
-The generated plans help developers understand the work before implementation begins.
+These plans help developers understand the scope and impact of changes prior to implementation.
 
 ---
 
 ## 🕵️ Agent Mode
 
-Agent Mode allows AI to interact with the codebase using tools.
+Allows AI to interact directly with the codebase using powerful tools:
 
-Capabilities:
-
-* Read files
-* Search files
-* Analyze code
-* Create files
-* Modify files
+* Read & search files
+* Analyze code quality
+* Create, modify, and delete files
 * Create folders
-* Execute approved actions
+* Execute commands with prior user approval
 
-All modifications are staged before being applied.
+All changes remain staged until reviewed and explicitly approved.
 
 ---
 
 ## ✅ Approval Workflow
 
-Safety is a core feature of SaarthiClaw.
-
-Before any modification is applied:
+Safety is paramount. All modifications follow this workflow:
 
 1. Changes are staged
 2. Diffs are generated
-3. User reviews the changes
-4. User approves or rejects actions
-5. Only approved actions are executed
+3. User reviews change proposals
+4. User approves or rejects each change
+5. Only approved changes are applied to the codebase
 
-This prevents accidental modifications.
+This ensures total control and prevents unintended modifications.
 
 ---
 
 ## 🤖 Telegram Integration
 
-SaarthiClaw can be controlled through Telegram.
+Control SaarthiClaw remotely through Telegram:
 
-Features:
-
-* Owner verification
-* Remote interaction
-* AI-powered assistance
-* Project access through Telegram commands
-
-This enables developers to interact with their assistant from anywhere.
-
----
-
-# 🏗️ Tech Stack
-
-### Core
-
-* TypeScript
-* Bun Runtime
-* AI SDK
-* OpenRouter
-
-### CLI
-
-* Commander
-* Clack Prompts
-* Chalk
-
-### Validation
-
-* Zod
-
-### Telegram
-
-* Telegraf
-
-### Rendering
-
-* Marked
-* Marked Terminal
-
----
-
-# 📂 Project Structure
-
-```text
-ai/
-│
-├── providers/
-├── models/
-└── configuration/
-
-modes/
-│
-├── ask/
-├── plan/
-├── agent/
-└── telegram/
-
-tui/
-
-index.ts
-package.json
-tsconfig.json
-```
+* Secure owner verification
+* Perform AI-assisted coding tasks from anywhere
+* Access project information and trigger CLI commands
 
 ---
 
@@ -167,114 +107,112 @@ bun link
 
 # 🔐 Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env` file in the project root with the following keys:
 
 ```env
 OPENROUTER_API_KEY=your_api_key
-
 TELEGRAM_BOT_TOKEN=your_bot_token
-
 TELEGRAM_OWNER_ID=your_telegram_user_id
 ```
 
-Never commit `.env` files to GitHub.
+Never commit `.env` files containing sensitive keys.
 
 ---
 
-# ▶️ Running SaarthiClaw
+# ▶️ Usage
 
-Start the CLI:
+Run SaarthiClaw CLI to wake up the assistant:
 
 ```bash
 saarthiclaw-build wakeup
 ```
 
-Available Modes:
+### Available Modes:
 
-* Ask Mode
-* Plan Mode
-* Agent Mode
-* Telegram Mode
+* **Ask Mode:** Interactively ask questions about your codebase.
+* **Plan Mode:** Generate detailed implementation plans.
+* **Agent Mode:** Execute approved modifications safely.
+* **Telegram Mode:** Use the assistant remotely via Telegram commands.
+
+---
+
+# ⚙️ CLI Modes Explained
+
+- **Ask Mode:** Query your project for explanations, summaries, and insights.
+- **Plan Mode:** Define goals and receive detailed stepwise plans.
+- **Agent Mode:** Let the AI perform coding tasks, subject to user approval.
+- **Telegram Mode:** Interact with SaarthiClaw remotely for flexibility.
+
+---
+
+# 🤖 Telegram Mode
+
+SaarthiClaw’s Telegram integration lets you control the assistant remotely with security features like owner verification. You can ask questions, run plans, and approve changes all from your Telegram client, making it ideal for remote or on-the-go usage.
+
+---
+
+# 📂 Project Structure
+
+```text
+ai/
+│
+├── providers/       # AI providers and configurations
+├── models/          # AI model configurations
+└── configuration/   # Core app config files
+
+modes/
+│
+├── ask/             # Implementation of Ask Mode
+├── plan/            # Implementation of Plan Mode
+├── agent/           # Implementation of Agent Mode
+└── telegram/        # Telegram bot integration
+
+tui/                # Terminal UI components
+
+index.ts            # Entry point
+package.json        # Project metadata and dependencies
+tsconfig.json       # TypeScript configuration
+```
 
 ---
 
 # 🔄 Typical Workflow
 
-### 1. Generate a Plan
-
-```text
-Goal:
-Add WhatsApp integration
-```
-
-SaarthiClaw generates a structured implementation plan.
+1. **Generate a Plan:** Define a goal and get a structured implementation plan.
+2. **Execute with Agent Mode:** Use AI to apply changes in steps.
+3. **Review Changes:** Inspect diffs and approve or reject each change.
+4. **Apply Changes:** Approved modifications are committed to the codebase.
 
 ---
 
-### 2. Execute with Agent Mode
+# 🛡️ Security and Safety Philosophy
 
-Select the desired plan steps and allow the agent to work on them.
-
----
-
-### 3. Review Changes
-
-Inspect generated diffs and approve or reject modifications.
+SaarthiClaw adheres to a human-in-the-loop model, ensuring the developer retains full control and oversight over AI-driven modifications. This mitigates risks and safeguards your codebase.
 
 ---
 
-### 4. Apply Changes
+# 🗺️ Future Roadmap
 
-Only approved changes are applied to the codebase.
-
----
-
-# 🛡️ Security Philosophy
-
-SaarthiClaw follows a human-in-the-loop approach.
-
-The assistant can:
-
-* Analyze
-* Suggest
-* Prepare modifications
-
-But final control always remains with the developer.
-
----
-
-# 🗺️ Roadmap
-
-Upcoming features:
-
-* WhatsApp Integration
-* Web Search Tools
-* Voice Mode
-* Docker Support
-* GitHub Actions Integration
-* Multi-Agent Collaboration
-* Persistent Memory
-* Advanced Planning Engine
+- WhatsApp Integration
+- Web Search Tools
+- Voice Interaction Mode
+- Docker Support
+- GitHub Actions Integration
+- Multi-Agent Collaboration
+- Persistent Memory
+- Advanced AI Planning Engine
 
 ---
 
 # 🤝 Contributing
 
-Contributions are welcome.
+Contributions are welcome! Please follow these steps:
 
 1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push the branch
-5. Open a Pull Request
-
-Example:
-
-```bash
-git checkout -b feature/whatsapp-mode
-git commit -m "Add WhatsApp integration"
-git push origin feature/whatsapp-mode
-```
+2. Create your feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a pull request
 
 ---
 
